@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Lexend+Deca:wght@200;400&display=swap');
+
+
+$mainBG: hsl(233, 47%, 7%);
+$cardBG: hsl(244, 38%, 16%);
+$accent: hsl(277, 64%, 61%);
+
+$headingColor: hsl(0, 0%, 100%);
+$paragraphColor: hsla(0, 0%, 100%, 0.75);
+$statsColor: hsla(0, 0%, 100%, 0.6);
+
+
+body {
+	background-color: $mainBG;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+	background-color: $cardBG;
+	width: 1080px;
+	height: 446px;
+	border-radius: 8px;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	padding: 60px;
+	padding-right: 80px;
+	padding-top: 50px;
+	font-family: "Inter", sans-serif;
+	font-weight: 700;
+	h1 {
+		color: $headingColor;
+		span {
+			color: $accent;
+		}
+	}
+	p {
+		color: $paragraphColor;
+		font-family: "Inter", sans-serif;
+		font-size: 15px;
+		font-weight: 300;
+		letter-spacing: 1px;
+		line-height: 150%;
+		margin-bottom: 80px;
+	}
+	.stats {
+		display: inherit;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-right: 60px;
+		.stat {
+			display: inherit;
+			flex-direction: column;
+			.number {
+				font-size: 23px;
+				font-family: "Inter", sans-serif;
+				color: $headingColor;
+			}
+			.unit {
+				margin-top: 5px;
+				font-family: "Lexend Deca", sans-serif;
+				font-size: 12px;
+				font-weight: 400;
+				color: $statsColor;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+		}
+	}
+}
+
+.img-container {
+	background-color: rgb(79, 0, 128);
+	border-radius: 0 8px 8px 0;
+	img {
+		opacity: 0.5;
+		border-radius: inherit;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	main {
+		flex-direction: column-reverse;
+		width: 375px;
+		height: 80vh;
+	}
+	
+	.info {
+		padding: 0;
+		text-align: center;
+		margin: 35px;
+		margin-top: 20px;
+		p {
+			margin-bottom: 30px;
+			letter-spacing: normal;
+			line-height: 170%;
+		}
+		.stats {
+			flex-direction: column;
+			padding: 0;
+			.stat {
+				padding: 12px 0;
+			}
+		}
+	}
+
+	.img-container {
+		border-radius: 8px 8px 0 0;
+		height: fit-content;
+		top: 0;
+		height: 298px;
+		img {
+			width: 100%;
+			border-radius: inherit;
+		}
+	}
+}
